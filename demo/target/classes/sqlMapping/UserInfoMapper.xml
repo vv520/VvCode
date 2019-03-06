@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vv.mapper.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.vv.entity.UserInfo">
+    <id column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="I_ID" jdbcType="DECIMAL" property="iId" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="TEL_NUM" jdbcType="VARCHAR" property="telNum" />
+    <result column="MOBILE_NUM" jdbcType="VARCHAR" property="mobileNum" />
+    <result column="EMPLOYEE_CARD_NO" jdbcType="VARCHAR" property="employeeCardNo" />
+    <result column="FULL_CHINESE_SPELL" jdbcType="VARCHAR" property="fullChineseSpell" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="ACCOUNT" jdbcType="VARCHAR" property="account" />
+    <result column="BIRTH_DAY" jdbcType="VARCHAR" property="birthDay" />
+    <result column="FLAG" jdbcType="DECIMAL" property="flag" />
+    <result column="STATUS" jdbcType="DECIMAL" property="status" />
+    <result column="HEAD_CHINESE_SPELL" jdbcType="VARCHAR" property="headChineseSpell" />
+    <result column="CREATE_TIME" jdbcType="CHAR" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="CHAR" property="updateTime" />
+    <result column="IS_FIRST_LOGIN" jdbcType="CHAR" property="isFirstLogin" />
+    <result column="PWD_UPDATE_DATE" jdbcType="CHAR" property="pwdUpdateDate" />
+    <result column="INPUT_PWD_ERROR_TIMES" jdbcType="DECIMAL" property="inputPwdErrorTimes" />
+    <result column="PASSWORD_HISTORY" jdbcType="VARCHAR" property="passwordHistory" />
+    <result column="D_ID" jdbcType="DECIMAL" property="dId" />
+    <result column="VIRTUAL_OPERATOR_NO" jdbcType="VARCHAR" property="virtualOperatorNo" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal">
+    delete from TTRD_AUTH_USER
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.vv.entity.UserInfo">
+    insert into TTRD_AUTH_USER (USER_ID, USER_NAME, I_ID, 
+      EMAIL, TEL_NUM, MOBILE_NUM, 
+      EMPLOYEE_CARD_NO, FULL_CHINESE_SPELL, PASSWORD, 
+      ACCOUNT, BIRTH_DAY, FLAG, 
+      STATUS, HEAD_CHINESE_SPELL, CREATE_TIME, 
+      UPDATE_TIME, IS_FIRST_LOGIN, PWD_UPDATE_DATE, 
+      INPUT_PWD_ERROR_TIMES, PASSWORD_HISTORY, D_ID, 
+      VIRTUAL_OPERATOR_NO)
+    values (#{userId,jdbcType=DECIMAL}, #{userName,jdbcType=VARCHAR}, #{iId,jdbcType=DECIMAL}, 
+      #{email,jdbcType=VARCHAR}, #{telNum,jdbcType=VARCHAR}, #{mobileNum,jdbcType=VARCHAR}, 
+      #{employeeCardNo,jdbcType=VARCHAR}, #{fullChineseSpell,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{account,jdbcType=VARCHAR}, #{birthDay,jdbcType=VARCHAR}, #{flag,jdbcType=DECIMAL}, 
+      #{status,jdbcType=DECIMAL}, #{headChineseSpell,jdbcType=VARCHAR}, #{createTime,jdbcType=CHAR}, 
+      #{updateTime,jdbcType=CHAR}, #{isFirstLogin,jdbcType=CHAR}, #{pwdUpdateDate,jdbcType=CHAR}, 
+      #{inputPwdErrorTimes,jdbcType=DECIMAL}, #{passwordHistory,jdbcType=VARCHAR}, #{dId,jdbcType=DECIMAL}, 
+      #{virtualOperatorNo,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.vv.entity.UserInfo">
+    update TTRD_AUTH_USER
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      I_ID = #{iId,jdbcType=DECIMAL},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      TEL_NUM = #{telNum,jdbcType=VARCHAR},
+      MOBILE_NUM = #{mobileNum,jdbcType=VARCHAR},
+      EMPLOYEE_CARD_NO = #{employeeCardNo,jdbcType=VARCHAR},
+      FULL_CHINESE_SPELL = #{fullChineseSpell,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      ACCOUNT = #{account,jdbcType=VARCHAR},
+      BIRTH_DAY = #{birthDay,jdbcType=VARCHAR},
+      FLAG = #{flag,jdbcType=DECIMAL},
+      STATUS = #{status,jdbcType=DECIMAL},
+      HEAD_CHINESE_SPELL = #{headChineseSpell,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=CHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=CHAR},
+      IS_FIRST_LOGIN = #{isFirstLogin,jdbcType=CHAR},
+      PWD_UPDATE_DATE = #{pwdUpdateDate,jdbcType=CHAR},
+      INPUT_PWD_ERROR_TIMES = #{inputPwdErrorTimes,jdbcType=DECIMAL},
+      PASSWORD_HISTORY = #{passwordHistory,jdbcType=VARCHAR},
+      D_ID = #{dId,jdbcType=DECIMAL},
+      VIRTUAL_OPERATOR_NO = #{virtualOperatorNo,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.math.BigDecimal" resultMap="BaseResultMap">
+    select USER_ID, USER_NAME, I_ID, EMAIL, TEL_NUM, MOBILE_NUM, EMPLOYEE_CARD_NO, FULL_CHINESE_SPELL, 
+    PASSWORD, ACCOUNT, BIRTH_DAY, FLAG, STATUS, HEAD_CHINESE_SPELL, CREATE_TIME, UPDATE_TIME, 
+    IS_FIRST_LOGIN, PWD_UPDATE_DATE, INPUT_PWD_ERROR_TIMES, PASSWORD_HISTORY, D_ID, VIRTUAL_OPERATOR_NO
+    from TTRD_AUTH_USER
+    where USER_ID = #{userId,jdbcType=DECIMAL}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select USER_ID, USER_NAME, I_ID, EMAIL, TEL_NUM, MOBILE_NUM, EMPLOYEE_CARD_NO, FULL_CHINESE_SPELL, 
+    PASSWORD, ACCOUNT, BIRTH_DAY, FLAG, STATUS, HEAD_CHINESE_SPELL, CREATE_TIME, UPDATE_TIME, 
+    IS_FIRST_LOGIN, PWD_UPDATE_DATE, INPUT_PWD_ERROR_TIMES, PASSWORD_HISTORY, D_ID, VIRTUAL_OPERATOR_NO
+    from TTRD_AUTH_USER
+  </select>
+  <select id="selectByAccount" resultMap="BaseResultMap">
+    select USER_ID, USER_NAME, I_ID, EMAIL, TEL_NUM, MOBILE_NUM, EMPLOYEE_CARD_NO, FULL_CHINESE_SPELL,
+    PASSWORD, ACCOUNT, BIRTH_DAY, FLAG, STATUS, HEAD_CHINESE_SPELL, CREATE_TIME, UPDATE_TIME,
+    IS_FIRST_LOGIN, PWD_UPDATE_DATE, INPUT_PWD_ERROR_TIMES, PASSWORD_HISTORY, D_ID, VIRTUAL_OPERATOR_NO
+    from TTRD_AUTH_USER
+    where ACCOUNT = #{account,jdbcType=VARCHAR}
+  </select>
+</mapper>

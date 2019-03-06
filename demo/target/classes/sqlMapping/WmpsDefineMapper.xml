@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vv.mapper.WmpsDefineMapper" >
+  <resultMap id="BaseResultMap" type="com.vv.entity.WmpsDefine" >
+    <result column="W_ID" property="wId" jdbcType="DECIMAL" />
+    <result column="I_CODE" property="iCode" jdbcType="VARCHAR" />
+    <result column="A_TYPE" property="aType" jdbcType="VARCHAR" />
+    <result column="I_NAME" property="iName" jdbcType="VARCHAR" />
+    <result column="M_TYPE" property="mType" jdbcType="VARCHAR" />
+    <result column="P_TYPE" property="pType" jdbcType="VARCHAR" />
+    <result column="P_CLASS" property="pClass" jdbcType="VARCHAR" />
+    <result column="UNIT_ID" property="unitId" jdbcType="DECIMAL" />
+    <result column="ISSUE_TIMES" property="issueTimes" jdbcType="DECIMAL" />
+    <result column="START_DATE" property="startDate" jdbcType="CHAR" />
+    <result column="MTR_DATE" property="mtrDate" jdbcType="CHAR" />
+    <result column="RAISE_START_DATE" property="raiseStartDate" jdbcType="CHAR" />
+    <result column="RAISE_MTR_DATE" property="raiseMtrDate" jdbcType="CHAR" />
+    <result column="YTM" property="ytm" jdbcType="DECIMAL" />
+    <result column="INNER_CODE" property="innerCode" jdbcType="VARCHAR" />
+    <result column="WMPS_CLASS" property="wmpsClass" jdbcType="CHAR" />
+    <result column="OPEN_TYPE" property="openType" jdbcType="CHAR" />
+    <result column="OPEN_CLASS" property="openClass" jdbcType="VARCHAR" />
+    <result column="ROLL_FREQ" property="rollFreq" jdbcType="VARCHAR" />
+    <result column="DAYCOUNT" property="daycount" jdbcType="VARCHAR" />
+    <result column="PAYMENT_FREQ" property="paymentFreq" jdbcType="VARCHAR" />
+    <result column="PAYMENT_CONV" property="paymentConv" jdbcType="VARCHAR" />
+    <result column="ISSUER" property="issuer" jdbcType="VARCHAR" />
+    <result column="INCOME_TYPE" property="incomeType" jdbcType="CHAR" />
+    <result column="TERM_TYPE" property="termType" jdbcType="CHAR" />
+    <result column="INVESTER_TYPE" property="investerType" jdbcType="VARCHAR" />
+    <result column="INVEST_AREA" property="investArea" jdbcType="CHAR" />
+    <result column="COUNTRY" property="country" jdbcType="CHAR" />
+    <result column="SERVICE_MODE" property="serviceMode" jdbcType="CHAR" />
+    <result column="OPERATION_MODE" property="operationMode" jdbcType="CHAR" />
+    <result column="BOOKKEEPING_TYPE" property="bookkeepingType" jdbcType="CHAR" />
+    <result column="ASSET_ALLOCATION_TYPE" property="assetAllocationType" jdbcType="CHAR" />
+    <result column="MANAGEMENT_MODE" property="managementMode" jdbcType="CHAR" />
+    <result column="MANAGEMENT_NAME" property="managementName" jdbcType="VARCHAR" />
+    <result column="PRICING_MODE" property="pricingMode" jdbcType="CHAR" />
+    <result column="INVEST_TYPE" property="investType" jdbcType="CHAR" />
+    <result column="IS_EXPECTED_YTM" property="isExpectedYtm" jdbcType="CHAR" />
+    <result column="IS_CALCULATING_BASIS" property="isCalculatingBasis" jdbcType="CHAR" />
+    <result column="CAP_YTM" property="capYtm" jdbcType="DECIMAL" />
+    <result column="FLOOR_YTM" property="floorYtm" jdbcType="DECIMAL" />
+    <result column="SALE_AREA" property="saleArea" jdbcType="VARCHAR" />
+    <result column="LOWEST_SALES" property="lowestSales" jdbcType="DECIMAL" />
+    <result column="RAISE_CURRENCY" property="raiseCurrency" jdbcType="VARCHAR" />
+    <result column="NOTIONAL_CURRENCY" property="notionalCurrency" jdbcType="CHAR" />
+    <result column="PROFIT_CURRENCY" property="profitCurrency" jdbcType="CHAR" />
+    <result column="DOMESTIC_DEPOSIT_INST_NAME" property="domesticDepositInstName" jdbcType="VARCHAR" />
+    <result column="DOMESTIC_DEPOSIT_INST_CODE" property="domesticDepositInstCode" jdbcType="VARCHAR" />
+    <result column="OVERSEAS_DEPOSIT_INST_NAME" property="overseasDepositInstName" jdbcType="VARCHAR" />
+    <result column="OVERSEAS_DEPOSIT_INST_COUNTRY" property="overseasDepositInstCountry" jdbcType="VARCHAR" />
+    <result column="RISK_PREFERENCE" property="riskPreference" jdbcType="VARCHAR" />
+    <result column="RISK_RANK" property="riskRank" jdbcType="VARCHAR" />
+    <result column="IS_EARLY_TERMINATION" property="isEarlyTermination" jdbcType="CHAR" />
+    <result column="IS_REDEMPTION" property="isRedemption" jdbcType="CHAR" />
+    <result column="PRODUCT_BRAND" property="productBrand" jdbcType="VARCHAR" />
+    <result column="COOPERATION_MODE" property="cooperationMode" jdbcType="CHAR" />
+    <result column="RAISE_TYPE" property="raiseType" jdbcType="CHAR" />
+    <result column="NOTIONAL_TERMINATION_MODE" property="notionalTerminationMode" jdbcType="CHAR" />
+    <result column="PROFIT_TERMINATION_MODE" property="profitTerminationMode" jdbcType="CHAR" />
+    <result column="IS_CREDIT" property="isCredit" jdbcType="CHAR" />
+    <result column="CREDIT_INSTITUTION_TYPE" property="creditInstitutionType" jdbcType="VARCHAR" />
+    <result column="CREDIT_TYPE" property="creditType" jdbcType="VARCHAR" />
+    <result column="CHINESESPELL" property="chinesespell" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="DECIMAL" />
+    <result column="UPDATE_USER" property="updateUser" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="VARCHAR" />
+    <result column="ACCOUNT_USER" property="accountUser" jdbcType="VARCHAR" />
+    <result column="ACCOUNT_TIME" property="accountTime" jdbcType="VARCHAR" />
+    <result column="MEMO" property="memo" jdbcType="VARCHAR" />
+    <result column="PAY_MONTH" property="payMonth" jdbcType="DECIMAL" />
+    <result column="PAY_DAY" property="payDay" jdbcType="DECIMAL" />
+    <result column="PLAN_SALES" property="planSales" jdbcType="DECIMAL" />
+    <result column="IS_ACCRUAL_BY_PAYMENT" property="isAccrualByPayment" jdbcType="CHAR" />
+    <result column="I_ID" property="iId" jdbcType="DECIMAL" />
+    <result column="RATE_UPDATE_USER" property="rateUpdateUser" jdbcType="VARCHAR" />
+    <result column="RATE_UPDATE_TIME" property="rateUpdateTime" jdbcType="VARCHAR" />
+    <result column="FIRST_PAYMENT_DATE" property="firstPaymentDate" jdbcType="VARCHAR" />
+    <result column="REPORT_DATE" property="reportDate" jdbcType="CHAR" />
+    <result column="REAL_RAISE_START_DATE" property="realRaiseStartDate" jdbcType="CHAR" />
+    <result column="REAL_RAISE_MTR_DATE" property="realRaiseMtrDate" jdbcType="CHAR" />
+    <result column="REPORT_USER" property="reportUser" jdbcType="VARCHAR" />
+    <result column="RAISE_USER" property="raiseUser" jdbcType="VARCHAR" />
+    <result column="COOPERATION_ORG_NAME" property="cooperationOrgName" jdbcType="VARCHAR" />
+    <result column="REPORT_FLAG" property="reportFlag" jdbcType="DECIMAL" />
+    <result column="PACKAGE_CODE" property="packageCode" jdbcType="VARCHAR" />
+    <result column="INVEST_MODE" property="investMode" jdbcType="VARCHAR" />
+    <result column="REPORT_WMPS_FLAG" property="reportWmpsFlag" jdbcType="DECIMAL" />
+    <result column="WMPS_UNIT_NAME" property="wmpsUnitName" jdbcType="VARCHAR" />
+    <result column="WMPS_DEFINE_APR_NAME" property="wmpsDefineAprName" jdbcType="VARCHAR" />
+    <result column="WMPS_DEFINE_APR_CARDID" property="wmpsDefineAprCardid" jdbcType="VARCHAR" />
+    <result column="WMPS_DEFINE_DESIGNER_NAME" property="wmpsDefineDesignerName" jdbcType="VARCHAR" />
+    <result column="WMPS_DEFINE_DESIGNER_CARDID" property="wmpsDefineDesignerCardid" jdbcType="VARCHAR" />
+    <result column="INVESTER_MANAGER_NAME" property="investerManagerName" jdbcType="VARCHAR" />
+    <result column="INVESTER_MANAGER_CARDID" property="investerManagerCardid" jdbcType="VARCHAR" />
+    <result column="BUSINESSER_NAME" property="businesserName" jdbcType="VARCHAR" />
+    <result column="BUSINESSER_PHONE" property="businesserPhone" jdbcType="VARCHAR" />
+    <result column="BUSINESSER_MOBILE_PHONE" property="businesserMobilePhone" jdbcType="VARCHAR" />
+    <result column="BUSINESSER_EMAIL" property="businesserEmail" jdbcType="VARCHAR" />
+    <result column="WMPS_TYPE" property="wmpsType" jdbcType="DECIMAL" />
+    <result column="SETTLE_NO" property="settleNo" jdbcType="VARCHAR" />
+    <result column="PAY_DATE" property="payDate" jdbcType="CHAR" />
+    <result column="WMPS_SETTLE_FLAG" property="wmpsSettleFlag" jdbcType="CHAR" />
+    <result column="FIXED_HOLD_TERM" property="fixedHoldTerm" jdbcType="DECIMAL" />
+    <result column="CASH_REMIT" property="cashRemit" jdbcType="CHAR" />
+    <result column="SALE_CHANNEL" property="saleChannel" jdbcType="CHAR" />
+    <result column="FIX_TERM_START_DATE" property="fixTermStartDate" jdbcType="CHAR" />
+    <result column="FIX_TERM_END_DATE" property="fixTermEndDate" jdbcType="CHAR" />
+    <result column="INCREMENT_AMOUNT" property="incrementAmount" jdbcType="DECIMAL" />
+    <result column="FLOOR_SALE" property="floorSale" jdbcType="DECIMAL" />
+    <result column="SINGLE_CLIENT_CAP_AMOUNT" property="singleClientCapAmount" jdbcType="DECIMAL" />
+    <result column="WMPS_PARENT_CODE" property="wmpsParentCode" jdbcType="VARCHAR" />
+    <result column="BRANCH_ID" property="branchId" jdbcType="VARCHAR" />
+    <result column="REAL_SALES" property="realSales" jdbcType="DECIMAL" />
+    <result column="BENCHMARK_TYPE" property="benchmarkType" jdbcType="DECIMAL" />
+    <result column="BENCHMARK_ID" property="benchmarkId" jdbcType="DECIMAL" />
+    <result column="BENCHMARK_RATE" property="benchmarkRate" jdbcType="DECIMAL" />
+    <result column="LEAST_HOLD_TERM" property="leastHoldTerm" jdbcType="DECIMAL" />
+    <result column="BASE_ASSET_YIELD" property="baseAssetYield" jdbcType="DECIMAL" />
+    <result column="DERIVE_ASSET_YIELD" property="deriveAssetYield" jdbcType="DECIMAL" />
+    <result column="IS_DELETE" property="isDelete" jdbcType="DECIMAL" />
+    <result column="SERIES_ID" property="seriesId" jdbcType="DECIMAL" />
+    <result column="SUBSCRIPTION_ADD_AMT" property="subscriptionAddAmt" jdbcType="DECIMAL" />
+    <result column="SUBSCRIPTION_FLOOR_AMT" property="subscriptionFloorAmt" jdbcType="DECIMAL" />
+    <result column="SUBSCRIPTION_INCREMENT_AMT" property="subscriptionIncrementAmt" jdbcType="DECIMAL" />
+    <result column="SUBSCRIPTION_SINGEL_CAP_AMT" property="subscriptionSingelCapAmt" jdbcType="DECIMAL" />
+    <result column="SUBSCRIPTION_SINGEL_FLOOR_AMT" property="subscriptionSingelFloorAmt" jdbcType="DECIMAL" />
+    <result column="PURCHASE_ADD_AMT" property="purchaseAddAmt" jdbcType="DECIMAL" />
+    <result column="PURCHASE_INCREMENT_AMT" property="purchaseIncrementAmt" jdbcType="DECIMAL" />
+    <result column="PURCHASE_FLOOR_AMT" property="purchaseFloorAmt" jdbcType="DECIMAL" />
+    <result column="REDEMPTION_FLOOR_AMT" property="redemptionFloorAmt" jdbcType="DECIMAL" />
+    <result column="I_FULL_NAME" property="iFullName" jdbcType="VARCHAR" />
+    <result column="PURCHASE_FEE" property="purchaseFee" jdbcType="DECIMAL" />
+    <result column="REDEMPTION_FEE" property="redemptionFee" jdbcType="DECIMAL" />
+    <result column="IS_LAYER" property="isLayer" jdbcType="CHAR" />
+    <result column="LAYER_TYPE" property="layerType" jdbcType="VARCHAR" />
+    <result column="RISK_GRADE" property="riskGrade" jdbcType="VARCHAR" />
+    <result column="INVEST_SCOPE" property="investScope" jdbcType="VARCHAR" />
+    <result column="SINGLE_CLIENT_FLOOR_AMOUNT" property="singleClientFloorAmount" jdbcType="DECIMAL" />
+    <result column="SINGLE_PERSON_CAP_AMOUNT" property="singlePersonCapAmount" jdbcType="DECIMAL" />
+    <result column="REPAYMENT_METHOD" property="repaymentMethod" jdbcType="VARCHAR" />
+    <result column="SUBSCRIPTION_FLAG" property="subscriptionFlag" jdbcType="VARCHAR" />
+    <result column="PURCHASE_FLAG" property="purchaseFlag" jdbcType="VARCHAR" />
+    <result column="ZZD_CODE" property="zzdCode" jdbcType="VARCHAR" />
+    <result column="DELETE_FLAG" property="deleteFlag" jdbcType="CHAR" />
+    <result column="ASSET_TYPE" property="assetType" jdbcType="CHAR" />
+    <result column="SDP_TYPE" property="sdpType" jdbcType="CHAR" />
+    <result column="SUBJECTS_CODE" property="subjectsCode" jdbcType="VARCHAR" />
+    <result column="PRODUCT_REGISTRATION_CODE" property="productRegistrationCode" jdbcType="VARCHAR" />
+    <result column="IS_STRUCTURED" property="isStructured" jdbcType="VARCHAR" />
+    <result column="LEVEL_TYPE" property="levelType" jdbcType="CHAR" />
+    <result column="AVE_EXP_YTM" property="aveExpYtm" jdbcType="DECIMAL" />
+    <result column="YTM_MEMO" property="ytmMemo" jdbcType="VARCHAR" />
+    <result column="OPEN_MODE" property="openMode" jdbcType="CHAR" />
+    <result column="REGULAR_OPEN_CYCLE" property="regularOpenCycle" jdbcType="CHAR" />
+    <result column="OTHER_OPEN_CYCLE" property="otherOpenCycle" jdbcType="VARCHAR" />
+    <result column="NONREGULAR_OPEN_CYCLE" property="nonregularOpenCycle" jdbcType="VARCHAR" />
+    <result column="CYCLE_START_DATE" property="cycleStartDate" jdbcType="CHAR" />
+    <result column="IS_HOLIDAY_OPEN" property="isHolidayOpen" jdbcType="CHAR" />
+    <result column="OPEN_BUSINESS" property="openBusiness" jdbcType="CHAR" />
+    <result column="OPEN_BUSINESS_DESCRIPTION" property="openBusinessDescription" jdbcType="VARCHAR" />
+    <result column="PEOPLE_BANK_CODE" property="peopleBankCode" jdbcType="VARCHAR" />
+    <result column="WMPS_CODE" property="wmpsCode" jdbcType="VARCHAR" />
+    <result column="CUSTOMER_TYPE" property="customerType" jdbcType="VARCHAR" />
+    <result column="MANAGEMENT_TYPE" property="managementType" jdbcType="CHAR" />
+    <result column="PRODUCT_TYPE" property="productType" jdbcType="CHAR" />
+    <result column="BUSINESS_MODEL" property="businessModel" jdbcType="CHAR" />
+    <result column="INCOME_FLAG" property="incomeFlag" jdbcType="CHAR" />
+    <result column="CORPUS_FLAG" property="corpusFlag" jdbcType="CHAR" />
+    <result column="INCOME_SECTION_START" property="incomeSectionStart" jdbcType="DECIMAL" />
+    <result column="INCOME_SECTION_MTR" property="incomeSectionMtr" jdbcType="DECIMAL" />
+    <result column="FIDUCIARY_DUTY" property="fiduciaryDuty" jdbcType="CHAR" />
+    <result column="N_TERM_TYPE" property="nTermType" jdbcType="CHAR" />
+    <result column="TRANSACTION_MODE" property="transactionMode" jdbcType="CHAR" />
+    <result column="INCOME_MODE" property="incomeMode" jdbcType="CHAR" />
+    <result column="INDIVIDUAL_INVESTOR" property="individualInvestor" jdbcType="VARCHAR" />
+    <result column="CORPORATE_INVESTOR" property="corporateInvestor" jdbcType="VARCHAR" />
+    <result column="NON_CORPORATE_INVESTOR" property="nonCorporateInvestor" jdbcType="VARCHAR" />
+    <result column="MCP_START_DATE" property="mcpStartDate" jdbcType="VARCHAR" />
+    <result column="MCP_MTR_DATE" property="mcpMtrDate" jdbcType="VARCHAR" />
+    <result column="SALE_FEE" property="saleFee" jdbcType="DECIMAL" />
+    <result column="CUSTODIAN_FEE" property="custodianFee" jdbcType="DECIMAL" />
+    <result column="PRODUCT_DAYS" property="productDays" jdbcType="DECIMAL" />
+    <result column="ZMCP_FLAG" property="zmcpFlag" jdbcType="CHAR" />
+    <result column="INVEST_CLASS_RATIO" property="investClassRatio" jdbcType="VARCHAR" />
+    <result column="TERM" property="term" jdbcType="VARCHAR" />
+    <result column="AVERAGE_RELEASE_TIMES" property="averageReleaseTimes" jdbcType="VARCHAR" />
+    <result column="ONLINE_FLAG" property="onlineFlag" jdbcType="VARCHAR" />
+    <result column="CORE_ACCT_CODE_IN" property="coreAcctCodeIn" jdbcType="VARCHAR" />
+    <result column="CORE_ACCT_CODE_OUT" property="coreAcctCodeOut" jdbcType="VARCHAR" />
+    <result column="PRIORITY_FLAG" property="priorityFlag" jdbcType="CHAR" />
+    <result column="PRIORITY_LEVEL" property="priorityLevel" jdbcType="CHAR" />
+    <result column="IS_NONSTANDARD" property="isNonstandard" jdbcType="CHAR" />
+    <result column="MONEY_INVEST_TYPE" property="moneyInvestType" jdbcType="CHAR" />
+    <result column="TRADE_PLACE" property="tradePlace" jdbcType="CHAR" />
+    <result column="SPONSOR_ORG_CODE" property="sponsorOrgCode" jdbcType="VARCHAR" />
+    <result column="PLAN_REGISTER_CODE" property="planRegisterCode" jdbcType="VARCHAR" />
+    <result column="SPV_MNGER" property="spvMnger" jdbcType="VARCHAR" />
+    <result column="SPV_TRSER" property="spvTrser" jdbcType="VARCHAR" />
+    <result column="CAPITAL_MODE" property="capitalMode" jdbcType="VARCHAR" />
+    <result column="CAPITAL_INDUSTRY" property="capitalIndustry" jdbcType="CHAR" />
+    <result column="MCP_TYPE" property="mcpType" jdbcType="CHAR" />
+    <result column="BUY_STRUCT" property="buyStruct" jdbcType="CHAR" />
+    <result column="MANAGE_TYPE" property="manageType" jdbcType="CHAR" />
+    <result column="IS_CONTROL_PLAN" property="isControlPlan" jdbcType="CHAR" />
+    <result column="TRANSACTION_FEE" property="transactionFee" jdbcType="DECIMAL" />
+    <result column="INTERMEDIARY_FEE" property="intermediaryFee" jdbcType="DECIMAL" />
+    <result column="OTHER_FEE" property="otherFee" jdbcType="DECIMAL" />
+    <result column="DIVIDE_YTM" property="divideYtm" jdbcType="DECIMAL" />
+    <result column="IS_DIVIDE" property="isDivide" jdbcType="VARCHAR" />
+    <result column="ASSIGN_BASE" property="assignBase" jdbcType="DECIMAL" />
+    <result column="ASSIGN_ADJUST" property="assignAdjust" jdbcType="DECIMAL" />
+    <result column="ASSIGN_ADJUST_REASON" property="assignAdjustReason" jdbcType="VARCHAR" />
+    <result column="ASSIGN_ADJUST_EFFECT" property="assignAdjustEffect" jdbcType="DECIMAL" />
+    <result column="PROS_INCOME_RATE" property="prosIncomeRate" jdbcType="DECIMAL" />
+    <result column="IS_CUSTOMIZATION" property="isCustomization" jdbcType="CHAR" />
+    <result column="IS_PRIVATEBANK_CUSTOM_PRODUCT" property="isPrivatebankCustomProduct" jdbcType="CHAR" />
+    <result column="CUS_INFO" property="cusInfo" jdbcType="CHAR" />
+    <result column="IS_SALED_BY_INST" property="isSaledByInst" jdbcType="CHAR" />
+    <result column="INSTIDS" property="instids" jdbcType="VARCHAR" />
+    <result column="MEMO1" property="memo1" jdbcType="VARCHAR" />
+    <result column="MEMO2" property="memo2" jdbcType="VARCHAR" />
+    <result column="MEMO3" property="memo3" jdbcType="VARCHAR" />
+    <result column="MEMO4" property="memo4" jdbcType="VARCHAR" />
+    <result column="OPER_USER" property="operUser" jdbcType="VARCHAR" />
+    <result column="CHECK_USER" property="checkUser" jdbcType="VARCHAR" />
+    <result column="MEMO5" property="memo5" jdbcType="VARCHAR" />
+    <result column="REPORT_CREDIT_TYPE" property="reportCreditType" jdbcType="VARCHAR" />
+    <result column="CLIENT_TYPE" property="clientType" jdbcType="VARCHAR" />
+    <result column="SAL_CHANNEL" property="salChannel" jdbcType="VARCHAR" />
+    <result column="DELEGATION_TYPE" property="delegationType" jdbcType="VARCHAR" />
+    <result column="IS_RULE_CYCLE" property="isRuleCycle" jdbcType="CHAR" />
+    <result column="IS_REGULAR_CHANNEL" property="isRegularChannel" jdbcType="CHAR" />
+    <result column="INTERBANK_TYPE" property="interbankType" jdbcType="VARCHAR" />
+    <result column="IS_ASSET_LOCKED" property="isAssetLocked" jdbcType="CHAR" />
+    <result column="ISSUER_IDENTIFY" property="issuerIdentify" jdbcType="VARCHAR" />
+    <result column="ISINST_FLAG" property="isinstFlag" jdbcType="DECIMAL" />
+    <result column="IMMF_MODE" property="immfMode" jdbcType="DECIMAL" />
+    <result column="DECLARE_CODE" property="declareCode" jdbcType="VARCHAR" />
+    <result column="IS_BRANCH_RECOMMEND" property="isBranchRecommend" jdbcType="DECIMAL" />
+    <result column="BRANCH" property="branch" jdbcType="VARCHAR" />
+    <result column="MAIN_I_CODE" property="mainICode" jdbcType="VARCHAR" />
+    <result column="MAIN_I_NAME" property="mainIName" jdbcType="VARCHAR" />
+    <result column="TRANS_ID" property="transId" jdbcType="VARCHAR" />
+    <result column="LBS_SHOW_TYPE" property="lbsShowType" jdbcType="CHAR" />
+    <result column="CAL_CODE" property="calCode" jdbcType="VARCHAR" />
+    <result column="COLLECTION_ACCID" property="collectionAccid" jdbcType="VARCHAR" />
+    <result column="CASHIN_ACCOUNT" property="cashinAccount" jdbcType="CHAR" />
+    <result column="CASHOUT_ACCOUNT" property="cashoutAccount" jdbcType="CHAR" />
+    <result column="INVEST_NATURE" property="investNature" jdbcType="VARCHAR" />
+    <result column="INVEST_RISK_TIP" property="investRiskTip" jdbcType="VARCHAR" />
+    <result column="WMPS_IS_EARLY_TERMINATION" property="wmpsIsEarlyTermination" jdbcType="CHAR" />
+    <result column="INVESTER_PROPERTY" property="investerProperty" jdbcType="CHAR" />
+    <result column="INVESTMENT_INTERMEDIATE" property="investmentIntermediate" jdbcType="CHAR" />
+    <result column="TRANSFER_ACCOUNT" property="transferAccount" jdbcType="VARCHAR" />
+    <result column="SALES_TEMPLATE_TYPE" property="salesTemplateType" jdbcType="VARCHAR" />
+    <result column="SALES_DATA_CONNECT" property="salesDataConnect" jdbcType="CHAR" />
+    <result column="INTERBANK_CUST_TYPE" property="interbankCustType" jdbcType="CHAR" />
+    <result column="SALES_CLASS" property="salesClass" jdbcType="VARCHAR" />
+    <result column="TRANS_IN" property="transIn" jdbcType="VARCHAR" />
+    <result column="TRANS_OUT" property="transOut" jdbcType="VARCHAR" />
+    <result column="SALES_FEE_INCOME" property="salesFeeIncome" jdbcType="DECIMAL" />
+    <result column="FPML" property="fpml" jdbcType="CLOB" />
+    <result column="SETTLED_INTEREST" property="settledInterest" jdbcType="BLOB" />
+  </resultMap>
+  <insert id="insert" parameterType="com.vv.entity.WmpsDefine" >
+    insert into TTRD_WMPS_DEFINE (W_ID, I_CODE, A_TYPE, 
+      I_NAME, M_TYPE, P_TYPE, 
+      P_CLASS, UNIT_ID, ISSUE_TIMES, 
+      START_DATE, MTR_DATE, RAISE_START_DATE, 
+      RAISE_MTR_DATE, YTM, INNER_CODE, 
+      WMPS_CLASS, OPEN_TYPE, OPEN_CLASS, 
+      ROLL_FREQ, DAYCOUNT, PAYMENT_FREQ, 
+      PAYMENT_CONV, ISSUER, INCOME_TYPE, 
+      TERM_TYPE, INVESTER_TYPE, INVEST_AREA, 
+      COUNTRY, SERVICE_MODE, OPERATION_MODE, 
+      BOOKKEEPING_TYPE, ASSET_ALLOCATION_TYPE, MANAGEMENT_MODE, 
+      MANAGEMENT_NAME, PRICING_MODE, INVEST_TYPE, 
+      IS_EXPECTED_YTM, IS_CALCULATING_BASIS, CAP_YTM, 
+      FLOOR_YTM, SALE_AREA, LOWEST_SALES, 
+      RAISE_CURRENCY, NOTIONAL_CURRENCY, PROFIT_CURRENCY, 
+      DOMESTIC_DEPOSIT_INST_NAME, DOMESTIC_DEPOSIT_INST_CODE, 
+      OVERSEAS_DEPOSIT_INST_NAME, OVERSEAS_DEPOSIT_INST_COUNTRY, 
+      RISK_PREFERENCE, RISK_RANK, IS_EARLY_TERMINATION, 
+      IS_REDEMPTION, PRODUCT_BRAND, COOPERATION_MODE, 
+      RAISE_TYPE, NOTIONAL_TERMINATION_MODE, PROFIT_TERMINATION_MODE, 
+      IS_CREDIT, CREDIT_INSTITUTION_TYPE, CREDIT_TYPE, 
+      CHINESESPELL, STATUS, UPDATE_USER, 
+      UPDATE_TIME, ACCOUNT_USER, ACCOUNT_TIME, 
+      MEMO, PAY_MONTH, PAY_DAY, 
+      PLAN_SALES, IS_ACCRUAL_BY_PAYMENT, I_ID, 
+      RATE_UPDATE_USER, RATE_UPDATE_TIME, FIRST_PAYMENT_DATE, 
+      REPORT_DATE, REAL_RAISE_START_DATE, REAL_RAISE_MTR_DATE, 
+      REPORT_USER, RAISE_USER, COOPERATION_ORG_NAME, 
+      REPORT_FLAG, PACKAGE_CODE, INVEST_MODE, 
+      REPORT_WMPS_FLAG, WMPS_UNIT_NAME, WMPS_DEFINE_APR_NAME, 
+      WMPS_DEFINE_APR_CARDID, WMPS_DEFINE_DESIGNER_NAME, 
+      WMPS_DEFINE_DESIGNER_CARDID, INVESTER_MANAGER_NAME, 
+      INVESTER_MANAGER_CARDID, BUSINESSER_NAME, 
+      BUSINESSER_PHONE, BUSINESSER_MOBILE_PHONE, 
+      BUSINESSER_EMAIL, WMPS_TYPE, SETTLE_NO, 
+      PAY_DATE, WMPS_SETTLE_FLAG, FIXED_HOLD_TERM, 
+      CASH_REMIT, SALE_CHANNEL, FIX_TERM_START_DATE, 
+      FIX_TERM_END_DATE, INCREMENT_AMOUNT, FLOOR_SALE, 
+      SINGLE_CLIENT_CAP_AMOUNT, WMPS_PARENT_CODE, 
+      BRANCH_ID, REAL_SALES, BENCHMARK_TYPE, 
+      BENCHMARK_ID, BENCHMARK_RATE, LEAST_HOLD_TERM, 
+      BASE_ASSET_YIELD, DERIVE_ASSET_YIELD, IS_DELETE, 
+      SERIES_ID, SUBSCRIPTION_ADD_AMT, SUBSCRIPTION_FLOOR_AMT, 
+      SUBSCRIPTION_INCREMENT_AMT, SUBSCRIPTION_SINGEL_CAP_AMT, 
+      SUBSCRIPTION_SINGEL_FLOOR_AMT, PURCHASE_ADD_AMT, 
+      PURCHASE_INCREMENT_AMT, PURCHASE_FLOOR_AMT, 
+      REDEMPTION_FLOOR_AMT, I_FULL_NAME, PURCHASE_FEE, 
+      REDEMPTION_FEE, IS_LAYER, LAYER_TYPE, 
+      RISK_GRADE, INVEST_SCOPE, SINGLE_CLIENT_FLOOR_AMOUNT, 
+      SINGLE_PERSON_CAP_AMOUNT, REPAYMENT_METHOD, 
+      SUBSCRIPTION_FLAG, PURCHASE_FLAG, ZZD_CODE, 
+      DELETE_FLAG, ASSET_TYPE, SDP_TYPE, 
+      SUBJECTS_CODE, PRODUCT_REGISTRATION_CODE, 
+      IS_STRUCTURED, LEVEL_TYPE, AVE_EXP_YTM, 
+      YTM_MEMO, OPEN_MODE, REGULAR_OPEN_CYCLE, 
+      OTHER_OPEN_CYCLE, NONREGULAR_OPEN_CYCLE, CYCLE_START_DATE, 
+      IS_HOLIDAY_OPEN, OPEN_BUSINESS, OPEN_BUSINESS_DESCRIPTION, 
+      PEOPLE_BANK_CODE, WMPS_CODE, CUSTOMER_TYPE, 
+      MANAGEMENT_TYPE, PRODUCT_TYPE, BUSINESS_MODEL, 
+      INCOME_FLAG, CORPUS_FLAG, INCOME_SECTION_START, 
+      INCOME_SECTION_MTR, FIDUCIARY_DUTY, N_TERM_TYPE, 
+      TRANSACTION_MODE, INCOME_MODE, INDIVIDUAL_INVESTOR, 
+      CORPORATE_INVESTOR, NON_CORPORATE_INVESTOR, 
+      MCP_START_DATE, MCP_MTR_DATE, SALE_FEE, 
+      CUSTODIAN_FEE, PRODUCT_DAYS, ZMCP_FLAG, 
+      INVEST_CLASS_RATIO, TERM, AVERAGE_RELEASE_TIMES, 
+      ONLINE_FLAG, CORE_ACCT_CODE_IN, CORE_ACCT_CODE_OUT, 
+      PRIORITY_FLAG, PRIORITY_LEVEL, IS_NONSTANDARD, 
+      MONEY_INVEST_TYPE, TRADE_PLACE, SPONSOR_ORG_CODE, 
+      PLAN_REGISTER_CODE, SPV_MNGER, SPV_TRSER, 
+      CAPITAL_MODE, CAPITAL_INDUSTRY, MCP_TYPE, 
+      BUY_STRUCT, MANAGE_TYPE, IS_CONTROL_PLAN, 
+      TRANSACTION_FEE, INTERMEDIARY_FEE, OTHER_FEE, 
+      DIVIDE_YTM, IS_DIVIDE, ASSIGN_BASE, 
+      ASSIGN_ADJUST, ASSIGN_ADJUST_REASON, ASSIGN_ADJUST_EFFECT, 
+      PROS_INCOME_RATE, IS_CUSTOMIZATION, IS_PRIVATEBANK_CUSTOM_PRODUCT, 
+      CUS_INFO, IS_SALED_BY_INST, INSTIDS, 
+      MEMO1, MEMO2, MEMO3, 
+      MEMO4, OPER_USER, CHECK_USER, 
+      MEMO5, REPORT_CREDIT_TYPE, CLIENT_TYPE, 
+      SAL_CHANNEL, DELEGATION_TYPE, IS_RULE_CYCLE, 
+      IS_REGULAR_CHANNEL, INTERBANK_TYPE, IS_ASSET_LOCKED, 
+      ISSUER_IDENTIFY, ISINST_FLAG, IMMF_MODE, 
+      DECLARE_CODE, IS_BRANCH_RECOMMEND, BRANCH, 
+      MAIN_I_CODE, MAIN_I_NAME, TRANS_ID, 
+      LBS_SHOW_TYPE, CAL_CODE, COLLECTION_ACCID, 
+      CASHIN_ACCOUNT, CASHOUT_ACCOUNT, INVEST_NATURE, 
+      INVEST_RISK_TIP, WMPS_IS_EARLY_TERMINATION, INVESTER_PROPERTY, 
+      INVESTMENT_INTERMEDIATE, TRANSFER_ACCOUNT, SALES_TEMPLATE_TYPE, 
+      SALES_DATA_CONNECT, INTERBANK_CUST_TYPE, SALES_CLASS, 
+      TRANS_IN, TRANS_OUT, SALES_FEE_INCOME, 
+      FPML, SETTLED_INTEREST)
+    values (#{wId,jdbcType=DECIMAL}, #{iCode,jdbcType=VARCHAR}, #{aType,jdbcType=VARCHAR}, 
+      #{iName,jdbcType=VARCHAR}, #{mType,jdbcType=VARCHAR}, #{pType,jdbcType=VARCHAR}, 
+      #{pClass,jdbcType=VARCHAR}, #{unitId,jdbcType=DECIMAL}, #{issueTimes,jdbcType=DECIMAL}, 
+      #{startDate,jdbcType=CHAR}, #{mtrDate,jdbcType=CHAR}, #{raiseStartDate,jdbcType=CHAR}, 
+      #{raiseMtrDate,jdbcType=CHAR}, #{ytm,jdbcType=DECIMAL}, #{innerCode,jdbcType=VARCHAR}, 
+      #{wmpsClass,jdbcType=CHAR}, #{openType,jdbcType=CHAR}, #{openClass,jdbcType=VARCHAR}, 
+      #{rollFreq,jdbcType=VARCHAR}, #{daycount,jdbcType=VARCHAR}, #{paymentFreq,jdbcType=VARCHAR}, 
+      #{paymentConv,jdbcType=VARCHAR}, #{issuer,jdbcType=VARCHAR}, #{incomeType,jdbcType=CHAR}, 
+      #{termType,jdbcType=CHAR}, #{investerType,jdbcType=VARCHAR}, #{investArea,jdbcType=CHAR}, 
+      #{country,jdbcType=CHAR}, #{serviceMode,jdbcType=CHAR}, #{operationMode,jdbcType=CHAR}, 
+      #{bookkeepingType,jdbcType=CHAR}, #{assetAllocationType,jdbcType=CHAR}, #{managementMode,jdbcType=CHAR}, 
+      #{managementName,jdbcType=VARCHAR}, #{pricingMode,jdbcType=CHAR}, #{investType,jdbcType=CHAR}, 
+      #{isExpectedYtm,jdbcType=CHAR}, #{isCalculatingBasis,jdbcType=CHAR}, #{capYtm,jdbcType=DECIMAL}, 
+      #{floorYtm,jdbcType=DECIMAL}, #{saleArea,jdbcType=VARCHAR}, #{lowestSales,jdbcType=DECIMAL}, 
+      #{raiseCurrency,jdbcType=VARCHAR}, #{notionalCurrency,jdbcType=CHAR}, #{profitCurrency,jdbcType=CHAR}, 
+      #{domesticDepositInstName,jdbcType=VARCHAR}, #{domesticDepositInstCode,jdbcType=VARCHAR}, 
+      #{overseasDepositInstName,jdbcType=VARCHAR}, #{overseasDepositInstCountry,jdbcType=VARCHAR}, 
+      #{riskPreference,jdbcType=VARCHAR}, #{riskRank,jdbcType=VARCHAR}, #{isEarlyTermination,jdbcType=CHAR}, 
+      #{isRedemption,jdbcType=CHAR}, #{productBrand,jdbcType=VARCHAR}, #{cooperationMode,jdbcType=CHAR}, 
+      #{raiseType,jdbcType=CHAR}, #{notionalTerminationMode,jdbcType=CHAR}, #{profitTerminationMode,jdbcType=CHAR}, 
+      #{isCredit,jdbcType=CHAR}, #{creditInstitutionType,jdbcType=VARCHAR}, #{creditType,jdbcType=VARCHAR}, 
+      #{chinesespell,jdbcType=VARCHAR}, #{status,jdbcType=DECIMAL}, #{updateUser,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=VARCHAR}, #{accountUser,jdbcType=VARCHAR}, #{accountTime,jdbcType=VARCHAR}, 
+      #{memo,jdbcType=VARCHAR}, #{payMonth,jdbcType=DECIMAL}, #{payDay,jdbcType=DECIMAL}, 
+      #{planSales,jdbcType=DECIMAL}, #{isAccrualByPayment,jdbcType=CHAR}, #{iId,jdbcType=DECIMAL}, 
+      #{rateUpdateUser,jdbcType=VARCHAR}, #{rateUpdateTime,jdbcType=VARCHAR}, #{firstPaymentDate,jdbcType=VARCHAR}, 
+      #{reportDate,jdbcType=CHAR}, #{realRaiseStartDate,jdbcType=CHAR}, #{realRaiseMtrDate,jdbcType=CHAR}, 
+      #{reportUser,jdbcType=VARCHAR}, #{raiseUser,jdbcType=VARCHAR}, #{cooperationOrgName,jdbcType=VARCHAR}, 
+      #{reportFlag,jdbcType=DECIMAL}, #{packageCode,jdbcType=VARCHAR}, #{investMode,jdbcType=VARCHAR}, 
+      #{reportWmpsFlag,jdbcType=DECIMAL}, #{wmpsUnitName,jdbcType=VARCHAR}, #{wmpsDefineAprName,jdbcType=VARCHAR}, 
+      #{wmpsDefineAprCardid,jdbcType=VARCHAR}, #{wmpsDefineDesignerName,jdbcType=VARCHAR}, 
+      #{wmpsDefineDesignerCardid,jdbcType=VARCHAR}, #{investerManagerName,jdbcType=VARCHAR}, 
+      #{investerManagerCardid,jdbcType=VARCHAR}, #{businesserName,jdbcType=VARCHAR}, 
+      #{businesserPhone,jdbcType=VARCHAR}, #{businesserMobilePhone,jdbcType=VARCHAR}, 
+      #{businesserEmail,jdbcType=VARCHAR}, #{wmpsType,jdbcType=DECIMAL}, #{settleNo,jdbcType=VARCHAR}, 
+      #{payDate,jdbcType=CHAR}, #{wmpsSettleFlag,jdbcType=CHAR}, #{fixedHoldTerm,jdbcType=DECIMAL}, 
+      #{cashRemit,jdbcType=CHAR}, #{saleChannel,jdbcType=CHAR}, #{fixTermStartDate,jdbcType=CHAR}, 
+      #{fixTermEndDate,jdbcType=CHAR}, #{incrementAmount,jdbcType=DECIMAL}, #{floorSale,jdbcType=DECIMAL}, 
+      #{singleClientCapAmount,jdbcType=DECIMAL}, #{wmpsParentCode,jdbcType=VARCHAR}, 
+      #{branchId,jdbcType=VARCHAR}, #{realSales,jdbcType=DECIMAL}, #{benchmarkType,jdbcType=DECIMAL}, 
+      #{benchmarkId,jdbcType=DECIMAL}, #{benchmarkRate,jdbcType=DECIMAL}, #{leastHoldTerm,jdbcType=DECIMAL}, 
+      #{baseAssetYield,jdbcType=DECIMAL}, #{deriveAssetYield,jdbcType=DECIMAL}, #{isDelete,jdbcType=DECIMAL}, 
+      #{seriesId,jdbcType=DECIMAL}, #{subscriptionAddAmt,jdbcType=DECIMAL}, #{subscriptionFloorAmt,jdbcType=DECIMAL}, 
+      #{subscriptionIncrementAmt,jdbcType=DECIMAL}, #{subscriptionSingelCapAmt,jdbcType=DECIMAL}, 
+      #{subscriptionSingelFloorAmt,jdbcType=DECIMAL}, #{purchaseAddAmt,jdbcType=DECIMAL}, 
+      #{purchaseIncrementAmt,jdbcType=DECIMAL}, #{purchaseFloorAmt,jdbcType=DECIMAL}, 
+      #{redemptionFloorAmt,jdbcType=DECIMAL}, #{iFullName,jdbcType=VARCHAR}, #{purchaseFee,jdbcType=DECIMAL}, 
+      #{redemptionFee,jdbcType=DECIMAL}, #{isLayer,jdbcType=CHAR}, #{layerType,jdbcType=VARCHAR}, 
+      #{riskGrade,jdbcType=VARCHAR}, #{investScope,jdbcType=VARCHAR}, #{singleClientFloorAmount,jdbcType=DECIMAL}, 
+      #{singlePersonCapAmount,jdbcType=DECIMAL}, #{repaymentMethod,jdbcType=VARCHAR}, 
+      #{subscriptionFlag,jdbcType=VARCHAR}, #{purchaseFlag,jdbcType=VARCHAR}, #{zzdCode,jdbcType=VARCHAR}, 
+      #{deleteFlag,jdbcType=CHAR}, #{assetType,jdbcType=CHAR}, #{sdpType,jdbcType=CHAR}, 
+      #{subjectsCode,jdbcType=VARCHAR}, #{productRegistrationCode,jdbcType=VARCHAR}, 
+      #{isStructured,jdbcType=VARCHAR}, #{levelType,jdbcType=CHAR}, #{aveExpYtm,jdbcType=DECIMAL}, 
+      #{ytmMemo,jdbcType=VARCHAR}, #{openMode,jdbcType=CHAR}, #{regularOpenCycle,jdbcType=CHAR}, 
+      #{otherOpenCycle,jdbcType=VARCHAR}, #{nonregularOpenCycle,jdbcType=VARCHAR}, #{cycleStartDate,jdbcType=CHAR}, 
+      #{isHolidayOpen,jdbcType=CHAR}, #{openBusiness,jdbcType=CHAR}, #{openBusinessDescription,jdbcType=VARCHAR}, 
+      #{peopleBankCode,jdbcType=VARCHAR}, #{wmpsCode,jdbcType=VARCHAR}, #{customerType,jdbcType=VARCHAR}, 
+      #{managementType,jdbcType=CHAR}, #{productType,jdbcType=CHAR}, #{businessModel,jdbcType=CHAR}, 
+      #{incomeFlag,jdbcType=CHAR}, #{corpusFlag,jdbcType=CHAR}, #{incomeSectionStart,jdbcType=DECIMAL}, 
+      #{incomeSectionMtr,jdbcType=DECIMAL}, #{fiduciaryDuty,jdbcType=CHAR}, #{nTermType,jdbcType=CHAR}, 
+      #{transactionMode,jdbcType=CHAR}, #{incomeMode,jdbcType=CHAR}, #{individualInvestor,jdbcType=VARCHAR}, 
+      #{corporateInvestor,jdbcType=VARCHAR}, #{nonCorporateInvestor,jdbcType=VARCHAR}, 
+      #{mcpStartDate,jdbcType=VARCHAR}, #{mcpMtrDate,jdbcType=VARCHAR}, #{saleFee,jdbcType=DECIMAL}, 
+      #{custodianFee,jdbcType=DECIMAL}, #{productDays,jdbcType=DECIMAL}, #{zmcpFlag,jdbcType=CHAR}, 
+      #{investClassRatio,jdbcType=VARCHAR}, #{term,jdbcType=VARCHAR}, #{averageReleaseTimes,jdbcType=VARCHAR}, 
+      #{onlineFlag,jdbcType=VARCHAR}, #{coreAcctCodeIn,jdbcType=VARCHAR}, #{coreAcctCodeOut,jdbcType=VARCHAR}, 
+      #{priorityFlag,jdbcType=CHAR}, #{priorityLevel,jdbcType=CHAR}, #{isNonstandard,jdbcType=CHAR}, 
+      #{moneyInvestType,jdbcType=CHAR}, #{tradePlace,jdbcType=CHAR}, #{sponsorOrgCode,jdbcType=VARCHAR}, 
+      #{planRegisterCode,jdbcType=VARCHAR}, #{spvMnger,jdbcType=VARCHAR}, #{spvTrser,jdbcType=VARCHAR}, 
+      #{capitalMode,jdbcType=VARCHAR}, #{capitalIndustry,jdbcType=CHAR}, #{mcpType,jdbcType=CHAR}, 
+      #{buyStruct,jdbcType=CHAR}, #{manageType,jdbcType=CHAR}, #{isControlPlan,jdbcType=CHAR}, 
+      #{transactionFee,jdbcType=DECIMAL}, #{intermediaryFee,jdbcType=DECIMAL}, #{otherFee,jdbcType=DECIMAL}, 
+      #{divideYtm,jdbcType=DECIMAL}, #{isDivide,jdbcType=VARCHAR}, #{assignBase,jdbcType=DECIMAL}, 
+      #{assignAdjust,jdbcType=DECIMAL}, #{assignAdjustReason,jdbcType=VARCHAR}, #{assignAdjustEffect,jdbcType=DECIMAL}, 
+      #{prosIncomeRate,jdbcType=DECIMAL}, #{isCustomization,jdbcType=CHAR}, #{isPrivatebankCustomProduct,jdbcType=CHAR}, 
+      #{cusInfo,jdbcType=CHAR}, #{isSaledByInst,jdbcType=CHAR}, #{instids,jdbcType=VARCHAR}, 
+      #{memo1,jdbcType=VARCHAR}, #{memo2,jdbcType=VARCHAR}, #{memo3,jdbcType=VARCHAR}, 
+      #{memo4,jdbcType=VARCHAR}, #{operUser,jdbcType=VARCHAR}, #{checkUser,jdbcType=VARCHAR}, 
+      #{memo5,jdbcType=VARCHAR}, #{reportCreditType,jdbcType=VARCHAR}, #{clientType,jdbcType=VARCHAR}, 
+      #{salChannel,jdbcType=VARCHAR}, #{delegationType,jdbcType=VARCHAR}, #{isRuleCycle,jdbcType=CHAR}, 
+      #{isRegularChannel,jdbcType=CHAR}, #{interbankType,jdbcType=VARCHAR}, #{isAssetLocked,jdbcType=CHAR}, 
+      #{issuerIdentify,jdbcType=VARCHAR}, #{isinstFlag,jdbcType=DECIMAL}, #{immfMode,jdbcType=DECIMAL}, 
+      #{declareCode,jdbcType=VARCHAR}, #{isBranchRecommend,jdbcType=DECIMAL}, #{branch,jdbcType=VARCHAR}, 
+      #{mainICode,jdbcType=VARCHAR}, #{mainIName,jdbcType=VARCHAR}, #{transId,jdbcType=VARCHAR}, 
+      #{lbsShowType,jdbcType=CHAR}, #{calCode,jdbcType=VARCHAR}, #{collectionAccid,jdbcType=VARCHAR}, 
+      #{cashinAccount,jdbcType=CHAR}, #{cashoutAccount,jdbcType=CHAR}, #{investNature,jdbcType=VARCHAR}, 
+      #{investRiskTip,jdbcType=VARCHAR}, #{wmpsIsEarlyTermination,jdbcType=CHAR}, #{investerProperty,jdbcType=CHAR}, 
+      #{investmentIntermediate,jdbcType=CHAR}, #{transferAccount,jdbcType=VARCHAR}, #{salesTemplateType,jdbcType=VARCHAR}, 
+      #{salesDataConnect,jdbcType=CHAR}, #{interbankCustType,jdbcType=CHAR}, #{salesClass,jdbcType=VARCHAR}, 
+      #{transIn,jdbcType=VARCHAR}, #{transOut,jdbcType=VARCHAR}, #{salesFeeIncome,jdbcType=DECIMAL}, 
+      #{fpml,jdbcType=CLOB}, #{settledInterest,jdbcType=BLOB})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select W_ID, I_CODE, A_TYPE, I_NAME, M_TYPE, P_TYPE, P_CLASS, UNIT_ID, ISSUE_TIMES, 
+    START_DATE, MTR_DATE, RAISE_START_DATE, RAISE_MTR_DATE, YTM, INNER_CODE, WMPS_CLASS, 
+    OPEN_TYPE, OPEN_CLASS, ROLL_FREQ, DAYCOUNT, PAYMENT_FREQ, PAYMENT_CONV, ISSUER, INCOME_TYPE, 
+    TERM_TYPE, INVESTER_TYPE, INVEST_AREA, COUNTRY, SERVICE_MODE, OPERATION_MODE, BOOKKEEPING_TYPE, 
+    ASSET_ALLOCATION_TYPE, MANAGEMENT_MODE, MANAGEMENT_NAME, PRICING_MODE, INVEST_TYPE, 
+    IS_EXPECTED_YTM, IS_CALCULATING_BASIS, CAP_YTM, FLOOR_YTM, SALE_AREA, LOWEST_SALES, 
+    RAISE_CURRENCY, NOTIONAL_CURRENCY, PROFIT_CURRENCY, DOMESTIC_DEPOSIT_INST_NAME, DOMESTIC_DEPOSIT_INST_CODE, 
+    OVERSEAS_DEPOSIT_INST_NAME, OVERSEAS_DEPOSIT_INST_COUNTRY, RISK_PREFERENCE, RISK_RANK, 
+    IS_EARLY_TERMINATION, IS_REDEMPTION, PRODUCT_BRAND, COOPERATION_MODE, RAISE_TYPE, 
+    NOTIONAL_TERMINATION_MODE, PROFIT_TERMINATION_MODE, IS_CREDIT, CREDIT_INSTITUTION_TYPE, 
+    CREDIT_TYPE, CHINESESPELL, STATUS, UPDATE_USER, UPDATE_TIME, ACCOUNT_USER, ACCOUNT_TIME, 
+    MEMO, PAY_MONTH, PAY_DAY, PLAN_SALES, IS_ACCRUAL_BY_PAYMENT, I_ID, RATE_UPDATE_USER, 
+    RATE_UPDATE_TIME, FIRST_PAYMENT_DATE, REPORT_DATE, REAL_RAISE_START_DATE, REAL_RAISE_MTR_DATE, 
+    REPORT_USER, RAISE_USER, COOPERATION_ORG_NAME, REPORT_FLAG, PACKAGE_CODE, INVEST_MODE, 
+    REPORT_WMPS_FLAG, WMPS_UNIT_NAME, WMPS_DEFINE_APR_NAME, WMPS_DEFINE_APR_CARDID, WMPS_DEFINE_DESIGNER_NAME, 
+    WMPS_DEFINE_DESIGNER_CARDID, INVESTER_MANAGER_NAME, INVESTER_MANAGER_CARDID, BUSINESSER_NAME, 
+    BUSINESSER_PHONE, BUSINESSER_MOBILE_PHONE, BUSINESSER_EMAIL, WMPS_TYPE, SETTLE_NO, 
+    PAY_DATE, WMPS_SETTLE_FLAG, FIXED_HOLD_TERM, CASH_REMIT, SALE_CHANNEL, FIX_TERM_START_DATE, 
+    FIX_TERM_END_DATE, INCREMENT_AMOUNT, FLOOR_SALE, SINGLE_CLIENT_CAP_AMOUNT, WMPS_PARENT_CODE, 
+    BRANCH_ID, REAL_SALES, BENCHMARK_TYPE, BENCHMARK_ID, BENCHMARK_RATE, LEAST_HOLD_TERM, 
+    BASE_ASSET_YIELD, DERIVE_ASSET_YIELD, IS_DELETE, SERIES_ID, SUBSCRIPTION_ADD_AMT, 
+    SUBSCRIPTION_FLOOR_AMT, SUBSCRIPTION_INCREMENT_AMT, SUBSCRIPTION_SINGEL_CAP_AMT, 
+    SUBSCRIPTION_SINGEL_FLOOR_AMT, PURCHASE_ADD_AMT, PURCHASE_INCREMENT_AMT, PURCHASE_FLOOR_AMT, 
+    REDEMPTION_FLOOR_AMT, I_FULL_NAME, PURCHASE_FEE, REDEMPTION_FEE, IS_LAYER, LAYER_TYPE, 
+    RISK_GRADE, INVEST_SCOPE, SINGLE_CLIENT_FLOOR_AMOUNT, SINGLE_PERSON_CAP_AMOUNT, REPAYMENT_METHOD, 
+    SUBSCRIPTION_FLAG, PURCHASE_FLAG, ZZD_CODE, DELETE_FLAG, ASSET_TYPE, SDP_TYPE, SUBJECTS_CODE, 
+    PRODUCT_REGISTRATION_CODE, IS_STRUCTURED, LEVEL_TYPE, AVE_EXP_YTM, YTM_MEMO, OPEN_MODE, 
+    REGULAR_OPEN_CYCLE, OTHER_OPEN_CYCLE, NONREGULAR_OPEN_CYCLE, CYCLE_START_DATE, IS_HOLIDAY_OPEN, 
+    OPEN_BUSINESS, OPEN_BUSINESS_DESCRIPTION, PEOPLE_BANK_CODE, WMPS_CODE, CUSTOMER_TYPE, 
+    MANAGEMENT_TYPE, PRODUCT_TYPE, BUSINESS_MODEL, INCOME_FLAG, CORPUS_FLAG, INCOME_SECTION_START, 
+    INCOME_SECTION_MTR, FIDUCIARY_DUTY, N_TERM_TYPE, TRANSACTION_MODE, INCOME_MODE, INDIVIDUAL_INVESTOR, 
+    CORPORATE_INVESTOR, NON_CORPORATE_INVESTOR, MCP_START_DATE, MCP_MTR_DATE, SALE_FEE, 
+    CUSTODIAN_FEE, PRODUCT_DAYS, ZMCP_FLAG, INVEST_CLASS_RATIO, TERM, AVERAGE_RELEASE_TIMES, 
+    ONLINE_FLAG, CORE_ACCT_CODE_IN, CORE_ACCT_CODE_OUT, PRIORITY_FLAG, PRIORITY_LEVEL, 
+    IS_NONSTANDARD, MONEY_INVEST_TYPE, TRADE_PLACE, SPONSOR_ORG_CODE, PLAN_REGISTER_CODE, 
+    SPV_MNGER, SPV_TRSER, CAPITAL_MODE, CAPITAL_INDUSTRY, MCP_TYPE, BUY_STRUCT, MANAGE_TYPE, 
+    IS_CONTROL_PLAN, TRANSACTION_FEE, INTERMEDIARY_FEE, OTHER_FEE, DIVIDE_YTM, IS_DIVIDE, 
+    ASSIGN_BASE, ASSIGN_ADJUST, ASSIGN_ADJUST_REASON, ASSIGN_ADJUST_EFFECT, PROS_INCOME_RATE, 
+    IS_CUSTOMIZATION, IS_PRIVATEBANK_CUSTOM_PRODUCT, CUS_INFO, IS_SALED_BY_INST, INSTIDS, 
+    MEMO1, MEMO2, MEMO3, MEMO4, OPER_USER, CHECK_USER, MEMO5, REPORT_CREDIT_TYPE, CLIENT_TYPE, 
+    SAL_CHANNEL, DELEGATION_TYPE, IS_RULE_CYCLE, IS_REGULAR_CHANNEL, INTERBANK_TYPE, 
+    IS_ASSET_LOCKED, ISSUER_IDENTIFY, ISINST_FLAG, IMMF_MODE, DECLARE_CODE, IS_BRANCH_RECOMMEND, 
+    BRANCH, MAIN_I_CODE, MAIN_I_NAME, TRANS_ID, LBS_SHOW_TYPE, CAL_CODE, COLLECTION_ACCID, 
+    CASHIN_ACCOUNT, CASHOUT_ACCOUNT, INVEST_NATURE, INVEST_RISK_TIP, WMPS_IS_EARLY_TERMINATION, 
+    INVESTER_PROPERTY, INVESTMENT_INTERMEDIATE, TRANSFER_ACCOUNT, SALES_TEMPLATE_TYPE, 
+    SALES_DATA_CONNECT, INTERBANK_CUST_TYPE, SALES_CLASS, TRANS_IN, TRANS_OUT, SALES_FEE_INCOME, 
+    FPML, SETTLED_INTEREST
+    from TTRD_WMPS_DEFINE
+  </select>
+</mapper>

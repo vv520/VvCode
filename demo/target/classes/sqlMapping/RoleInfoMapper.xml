@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vv.mapper.RoleInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.vv.entity.RoleInfo" >
+    <id column="ROLE_ID" property="roleId" jdbcType="DECIMAL" />
+    <result column="ROLE_NAME" property="roleName" jdbcType="VARCHAR" />
+    <result column="MEMO" property="memo" jdbcType="VARCHAR" />
+    <result column="ROLE_TYPE" property="roleType" jdbcType="DECIMAL" />
+    <result column="I_ID" property="iId" jdbcType="DECIMAL" />
+    <result column="ROLE_CODE" property="roleCode" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from TTRD_AUTH_ROLE
+    where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.vv.entity.RoleInfo" >
+    insert into TTRD_AUTH_ROLE (ROLE_ID, ROLE_NAME, MEMO, 
+      ROLE_TYPE, I_ID, ROLE_CODE
+      )
+    values (#{roleId,jdbcType=DECIMAL}, #{roleName,jdbcType=VARCHAR}, #{memo,jdbcType=VARCHAR}, 
+      #{roleType,jdbcType=DECIMAL}, #{iId,jdbcType=DECIMAL}, #{roleCode,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.vv.entity.RoleInfo" >
+    update TTRD_AUTH_ROLE
+    set ROLE_NAME = #{roleName,jdbcType=VARCHAR},
+      MEMO = #{memo,jdbcType=VARCHAR},
+      ROLE_TYPE = #{roleType,jdbcType=DECIMAL},
+      I_ID = #{iId,jdbcType=DECIMAL},
+      ROLE_CODE = #{roleCode,jdbcType=VARCHAR}
+    where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select ROLE_ID, ROLE_NAME, MEMO, ROLE_TYPE, I_ID, ROLE_CODE
+    from TTRD_AUTH_ROLE
+    where ROLE_ID = #{roleId,jdbcType=DECIMAL}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select ROLE_ID, ROLE_NAME, MEMO, ROLE_TYPE, I_ID, ROLE_CODE
+    from TTRD_AUTH_ROLE
+  </select>
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="oraclegenerator" targetRuntime="MyBatis3Simple">
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!-- 配置数据库连接 -->
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@127.0.0.1:1521/orcl"
+                        userId="trd_cams"
+                        password="xpar"/>
+
+        <!-- 实体对象 -->
+        <javaModelGenerator targetPackage="com.vv.entity" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="sqlMapping" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- Dao层mapper -->
+        <javaClientGenerator targetPackage="com.vv.mapper" type="XMLMAPPER" targetProject="src/main/java">
+            <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- tablenName表名; domainObjectName文件名：UserInfo.java UserInfoMapper.java  UserInfoMapper.xml-->
+        <!--<table tableName="ttrd_auth_user" domainObjectName="UserInfo"/>
+        <table tableName="ttrd_auth_role" domainObjectName="RoleInfo"/>
+        <table tableName="ttrd_auth_role_authority" domainObjectName="RoleAuthority"></table>-->
+        <table tableName="ttrd_wmps_define" domainObjectName="wmpsDefine"/>
+    </context>
+</generatorConfiguration>
