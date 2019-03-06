@@ -1,0 +1,33 @@
+CREATE OR REPLACE FUNCTION TO_UPPER_YEAR(YEAR_IN  IN VARCHAR2)  
+ RETURN VARCHAR2  
+/**  
+ *年转化为大写汉字的函数 如将2008转换为二〇〇八  
+ *月份和日期转换的可以调用 TO_UPPER_NUM 函数  
+ *如SELECT TO_UPPER_NUM('21','2','2') FROM DUAL  
+ *查询系统大写年月日如下:  
+ *SELECT TO_UPPER_YEAR(TO_CHAR(SYSDATE,'YYYY')) || '年' ||  
+ *       TO_UPPER_NUM(TO_CHAR(SYSDATE,'MM'),'2','2') || '月' ||  
+ *       TO_UPPER_NUM(TO_CHAR(SYSDATE,'DD'),'2','2') || '日'  SJ  
+ *FROM DUAL  
+ */  
+IS  
+  TEMP     VARCHAR2(32767);  
+  RESULT   VARCHAR2(32767);  
+  STR      VARCHAR2(32767) := '〇一二三四五六七八九';  
+BEGIN  
+  IF YEAR_IN IS NULL THEN  
+    RETURN NULL;  
+  END IF;  
+  FOR I IN 1 .. LENGTH(YEAR_IN)  
+   LOOP  
+     SELECT SUBSTR(STR, SUBSTR(YEAR_IN,I, 1) + 1, 1)  
+       INTO TEMP  
+       FROM DUAL;  
+     RESULT := RESULT || TEMP;  
+   END LOOP;  
+  RETURN RESULT;  
+EXCEPTION  
+  WHEN OTHERS THEN  
+    DBMS_OUTPUT.PUT_LINE(SQLERRM);  
+    RETURN '';  
+END;  
