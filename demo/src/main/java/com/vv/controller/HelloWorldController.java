@@ -25,7 +25,7 @@ public class HelloWorldController {
     @RequestMapping("/hello")
     public String hello(){
 //        redisUtil.del("睡觉了喂");
-//        redisUtil.set("睡觉了喂","男神");
+        redisUtil.set("aa","男神");
         String value = (String)redisUtil.get("aa");
 
         return "Hello World!" + userInfoMapper.selectAll().size() + value;

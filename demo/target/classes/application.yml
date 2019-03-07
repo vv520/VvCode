@@ -5,13 +5,13 @@ spring:
         # Redis服务器连接端口
         port: 6379
         # Redis服务器连接密码（默认为空）
-        password: vv123456
+        password:
         #集群环境打开下面注释，单机不需要打开
-        cluster:
-          #集群信息
-          nodes: 192.168.198.129:7001,192.168.198.129:7002,192.168.198.129:7003
-          #默认值是5 一般当此值设置过大时，容易报：Too many Cluster redirections
-          maxRedirects: 3
+#        cluster:
+#          #集群信息
+#          nodes: 192.168.198.129:7001,192.168.198.129:7002,192.168.198.129:7003
+#          #默认值是5 一般当此值设置过大时，容易报：Too many Cluster redirections
+#          maxRedirects: 3
         pool:
            # 连接池最大连接数（使用负值表示没有限制）
            max-active: 8
